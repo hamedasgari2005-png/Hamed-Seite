@@ -50,3 +50,21 @@ Deshalb startet der WebKit-Test einen eigenen echten lokalen HTTP-Server, lädt 
 WebKit unter Linux ist eine Safari-verwandte Engine und kein physisches iPhone. „Zum Home-Bildschirm“, iOS-Speicherfreigabe, iOS-Dateidialoge und tatsächliche Kalenderübernahme sind nach der Veröffentlichung auf dem Nutzergerät zu prüfen. Große jahrelange Datenbestände sind noch nicht vermessen. Sicherungen sind für Geräte-/Browserwechsel erforderlich. Diese Version bietet Erinnerungen bei geöffneter App sowie Kalenderexport; Hintergrund-Push und automatische Synchronisierung sind nicht enthalten.
 
 Es werden keine dauerhafte Browser-Speichergarantie und keine Garantie völliger Fehlerfreiheit behauptet. Die genannten Abläufe sind konkret geprüft und erfolgreich.
+
+## GitHub-Prüfung und Veröffentlichung
+
+Die Prüfung im öffentlichen Repository ist ebenfalls erfolgreich: https://github.com/hamedasgari2005-png/Hamed-Seite/actions/runs/41986593630 (29 Logiktests und 15 Chromium-Browserabläufe).
+
+Die erstmalige Aktivierung von GitHub Pages wurde durch den Nutzer im öffentlichen Repository Hamed-Seite vorgenommen. Deployment erfolgreich: https://github.com/hamedasgari2005-png/Hamed-Seite/actions/runs/41991465191
+
+Die produktive Adresse **https://hamedasgari2005-png.github.io/Hamed-Seite/** wurde am 05.11.2026 zusätzlich mit Chromium in 390×844 Pixeln geprüft:
+
+- HTTP 200 und tatsächlich gerenderte Anwendung.
+- Aufgabe abschließen und nach vollständigem Neuladen weiterhin korrekter Spielstand.
+- Wechsel auf Hase/Lavendel, weiterhin erhaltene XP und Speicherung.
+- Alle fünf Bereiche erreichbar, kein seitliches Überlaufen.
+- Service Worker am Scope `/Hamed-Seite/` registriert.
+- Browser offline schalten, Produktionsadresse neu laden und eine weitere Aufgabe erfolgreich offline speichern.
+- Keine JavaScript-Laufzeitfehler in diesen Abläufen.
+
+Dies sind Browserprüfungen mit isolierten Testdaten, keine Behauptung einer bereits erfolgten Installation auf dem persönlichen iPhone. Physische Safari-Installation und System-Kalenderübernahme bleiben auf dem Nutzergerät zu prüfen.

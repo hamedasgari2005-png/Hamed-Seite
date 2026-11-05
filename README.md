@@ -4,7 +4,9 @@ Installierbare, kostenlose Selbstfürsorge-Web-App mit eigenständig gestaltetem
 
 ## Öffnen und installieren
 
-Nach Aktivierung von GitHub Pages: **https://hamedasgari2005-png.github.io/Hamed-Seite/**
+**Online öffnen: https://hamedasgari2005-png.github.io/Hamed-Seite/**
+
+GitHub Pages ist aktiviert. Die öffentliche HTTPS-Adresse wurde am 05.11.2026 zusätzlich im Browser geprüft: Aufgaben und Gestaltung bleiben nach Neuladen erhalten; alle fünf Bereiche sind erreichbar; der Service Worker kontrolliert den richtigen Unterpfad; Offline-Neustart und offline gespeicherte Aufgaben funktionieren. Keine JavaScript-Laufzeitfehler in diesen Abläufen.
 
 Auf dem iPhone in Safari öffnen → Teilen → Zum Home-Bildschirm → Hinzufügen. Beim ersten Online-Besuch lädt der Service Worker alle erforderlichen App-Dateien. Danach ist die Kernfunktion auch offline verfügbar. Die App funktioniert ebenfalls auf Android und Windows; dort steht gegebenenfalls „App installieren“ im Browsermenü zur Verfügung.
 
