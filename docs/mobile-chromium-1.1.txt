@@ -1,0 +1,16 @@
+
+> mooslicht-web@1.1.0 test:mobile
+> node tests/mobile.cjs
+
+PASS chromium small
+PASS chromium iphone-se
+PASS chromium iphone
+PASS chromium iphone-max
+PASS chromium galaxy
+PASS chromium galaxy-plus
+PASS chromium landscape
+PASS chromium tablet
+PASS chromium desktop
+PASS chromium large-text
+PASS chromium largest-text
+11/11 Geräte-/Schriftprofile bestanden

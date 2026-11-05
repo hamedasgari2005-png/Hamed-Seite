@@ -14,6 +14,10 @@ Der Browser entscheidet über die Speicherdauer. Vor dem Löschen von Browserdat
 
 ## Funktionsumfang
 
+Version 1.1 verbessert die Darstellung auf iPhone- und Samsung-Displaygrößen, Querformat und bei großer Schrift. Aufgaben folgen auf Handys direkt auf das Haustier. Neu sind Kategorie-Symbole und die Schnellauswahl im Atelier. Browser-Zurück/Vorwärts, Schutz vor doppeltem Absenden und die Anzeige bereits wartender Updates sind korrigiert.
+
+Samsung Internet: Menü (≡) → „Seite hinzufügen zu“ → „Startbildschirm“, je nach Version „App installieren“. Chrome auf Android: Menü (⋮) → „Zum Startbildschirm hinzufügen“ → „Installieren“. Bestehende Installation für Updates online öffnen und im Hinweis „Jetzt laden“ wählen. Ein Löschen oder Neuinstallieren ist dafür nicht erforderlich.
+
 - Bär, Fuchs, Hase und Waldgeist; sechs Fellfarben, drei Muster, vier Farbwelten; Hell/Dunkel/System; animiertes Streicheln, Laufen, Spielen, Essen und Schlafen.
 - Aufgaben erstellen, bearbeiten, pausieren und archivieren; einmalig/täglich/wöchentlich/an gewählten Wochentagen; Kategorie, Priorität, Uhrzeit; Tagesliste und offene einmalige Aufgaben; acht anpassbare Vorlagen.
 - XP, Level, Energie und Münzen; Belohnungen pro Fälligkeit nur einmal, auch nach Rückgängig; nachvollziehbares Buchungsjournal; keine Strafe für Pausen.
@@ -41,6 +45,7 @@ python3 -m http.server 8080
 # In einem zweiten Terminal, bei laufendem Server:
 npx playwright install chromium
 npm run test:browser
+npm run test:mobile
 ```
 
 Die Laufzeit benötigt keine npm-Pakete. Playwright ist ausschließlich eine Entwicklungsabhängigkeit. `MOOSLICHT_URL` wählt eine andere Testadresse; `MOOSLICHT_BROWSER=webkit` wählt die Safari-verwandte Engine, sofern lokal verfügbar. Screenshots liegen in `test-results/`. Browser-Fixtures enthalten nur Testdaten und verändern keine echten Nutzerkonten.

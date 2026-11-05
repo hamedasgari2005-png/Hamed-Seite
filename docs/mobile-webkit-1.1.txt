@@ -1,0 +1,16 @@
+
+> mooslicht-web@1.1.0 test:mobile
+> node tests/mobile.cjs
+
+PASS webkit small
+PASS webkit iphone-se
+PASS webkit iphone
+PASS webkit iphone-max
+PASS webkit galaxy
+PASS webkit galaxy-plus
+PASS webkit landscape
+PASS webkit tablet
+PASS webkit desktop
+PASS webkit large-text
+PASS webkit largest-text
+11/11 Geräte-/Schriftprofile bestanden

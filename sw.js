@@ -1,4 +1,4 @@
-const CACHE='mooslicht-web-1.0.0-'+new URL(self.registration.scope).pathname;
+const CACHE='mooslicht-web-1.1.0-'+new URL(self.registration.scope).pathname;
 const FILES=['./','./index.html','./style.css','./app.js','./core.js','./data.js','./storage.js','./art.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png','./icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES.map(p=>new URL(p,self.registration.scope).href)))));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('mooslicht-web-')&&key.endsWith(new URL(self.registration.scope).pathname)&&key!==CACHE)await caches.delete(key);await self.clients.claim()})()));

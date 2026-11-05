@@ -1,1 +1,1 @@
-{"name":"mooslicht-web","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test tests/core.test.mjs","test:browser":"node tests/browser.cjs","serve":"python3 -m http.server 8080"},"devDependencies":{"playwright":"1.62.1"}}
+{"name":"mooslicht-web","version":"1.1.0","private":true,"type":"module","scripts":{"test":"node --test tests/core.test.mjs","test:browser":"node tests/browser.cjs","test:mobile":"node tests/mobile.cjs","serve":"python3 -m http.server 8080"},"devDependencies":{"playwright":"1.62.1"}}

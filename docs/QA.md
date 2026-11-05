@@ -5,8 +5,9 @@ Stand: 05.11.2026. Tatsächlich auf dem Entwicklungsrechner ausgeführt:
 | Prüfung | Ergebnis |
 |---|---|
 | Node.js-Domänenlogik, Zeitzone Europe/Berlin | 29 Tests bestanden, 0 Fehler |
-| Chromium, 390×844 sowie 320 und 1440 Pixel Breite | 15 Browserabläufe bestanden, 0 Fehler |
-| Playwright WebKit 26.5, gleiche Abläufe | 15 Browserabläufe bestanden, 0 Fehler |
+| Chromium, 390×844 sowie 320 und 1440 Pixel Breite | 20 Browserabläufe bestanden, 0 Fehler |
+| Playwright WebKit 26.5, gleiche Abläufe | 20 Browserabläufe bestanden, 0 Fehler |
+| Geräte-/Schriftprofile in Chromium und WebKit | Je 11 Profile bestanden, 0 Fehler |
 | JavaScript-Syntax der App-Module und des Service Workers | Bestanden |
 | Kleine Texte im Standardthema | Kontrast erhöht, gemessen >5:1 auf dem Standardhintergrund |
 | Tatsächliche iPhone-Installation über Safari | Noch nicht auf dem physischen Nutzergerät ausgeführt |
@@ -14,6 +15,12 @@ Stand: 05.11.2026. Tatsächlich auf dem Entwicklungsrechner ausgeführt:
 Die unveränderten Protokolle befinden sich in diesem Ordner. Browser-Screenshots wurden in kleiner iPhone-Ansicht und auf dem Desktop visuell kontrolliert. Es sind Aufnahmen der tatsächlich laufenden Web-App mit Testdaten.
 
 ## Browserabläufe
+
+Version 1.1 ergänzt Prüfungen für Browser-Zurück/Vorwärts, doppelt abgesendete Tagebuchformulare, abgebrochene Gestaltung und leeres Inventar sowie einen echten Service-Worker-Versionswechsel. Beim Update bleiben ein ungespeicherter Profilentwurf bis zur bewussten Aktivierung und der gespeicherte Spielstand nach dem Versionswechsel erhalten. Auch ein schon vor einem Neustart wartendes Update wird angeboten. Protokolle: `browser-chromium-1.1.txt` und `browser-webkit-1.1.txt`.
+
+Die zusätzlichen Layouttests (`npm run test:mobile`) prüfen 320×568, 375×667, 390×844, 430×932, 360×780, 412×915, 844×390, 768×1024 und 1440×1000 sowie 150 und 200 Prozent Schriftgröße. Sie kontrollieren alle sechs Bereiche und mehrere Dialoge auf seitliches Überlaufen, abgeschnittene Beschriftungen, überlappende Bedienelemente und Dialoggrenzen. Lange Nutzer-, Tier- und Aufgabennamen sind Teil der Testdaten. Die bewusst horizontal scrollbar gestaltete Shop-Kategorienleiste wird durch Auswahl der letzten Kategorie geprüft. Bei 390 und 360 Pixeln werden zusätzlich alle vier Themen jeweils hell und dunkel sowie ein auf 340 Pixel Höhe verkleinerter Eingabebereich mit erreichbarem Speichern-Button geprüft. Das simuliert begrenzten Platz; es ersetzt keinen Test einer echten Systemtastatur.
+
+Behoben: abgeschnittene Tierauswahl bei schmalem Display/großer Schrift, zu enger Reise-Button, starre Formularspalten, zu kleine Schrift in Eingabefeldern, fehlende sichere Seiten-/Bodenabstände und sehr kleine alleinstehende Pfeil-Symbole. Mobile Navigation und Karten passen sich an; lange Bezeichnungen können umbrechen.
 
 1. Onboarding, Startaufgaben, Abschluss/Rückgängig/erneuter Abschluss und echter Seitenneustart.
 2. Tierart, Fellfarbe und Farbwelt ändern; Fortschritt nach Neustart erhalten.
@@ -45,9 +52,11 @@ Deshalb startet der WebKit-Test einen eigenen echten lokalen HTTP-Server, lädt 
 - Der ursprüngliche Textkontrast kleiner Hinweise wurde erhöht.
 - Browserprüfungen warten vor einem künstlichen Zeitsprung oder Neustart auf das tatsächliche Speichern, statt einen noch laufenden Vorgang abzubrechen.
 
+Zusätzlich ist geprüft, dass die Haustier-Vorschaubilder im Shop innerhalb der Bildfläche bleiben. Der Tastatursprung zum Hauptinhalt erhält den gewählten Bereich. Nach dem Onboarding beginnt der Startbildschirm oben.
+
 ## Grenzen der Abnahme
 
-WebKit unter Linux ist eine Safari-verwandte Engine und kein physisches iPhone. „Zum Home-Bildschirm“, iOS-Speicherfreigabe, iOS-Dateidialoge und tatsächliche Kalenderübernahme sind nach der Veröffentlichung auf dem Nutzergerät zu prüfen. Große jahrelange Datenbestände sind noch nicht vermessen. Sicherungen sind für Geräte-/Browserwechsel erforderlich. Diese Version bietet Erinnerungen bei geöffneter App sowie Kalenderexport; Hintergrund-Push und automatische Synchronisierung sind nicht enthalten.
+WebKit unter Linux ist eine Safari-verwandte Engine und kein physisches iPhone. Chromium-Profile sind kein physisches Samsung-Gerät und keine echte Samsung-Internet-Installation. „Zum Home-Bildschirm“, Systemtastatur, Speicherfreigabe, Dateidialoge und tatsächliche Kalenderübernahme bleiben auf echten Geräten zu prüfen. Große jahrelange Datenbestände sind noch nicht vermessen. Sicherungen sind für Geräte-/Browserwechsel erforderlich. Diese Version bietet Erinnerungen bei geöffneter App sowie Kalenderexport; Hintergrund-Push und automatische Synchronisierung sind nicht enthalten.
 
 Es werden keine dauerhafte Browser-Speichergarantie und keine Garantie völliger Fehlerfreiheit behauptet. Die genannten Abläufe sind konkret geprüft und erfolgreich.
 
