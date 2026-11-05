@@ -10,6 +10,8 @@ Neu: vier auswählbare Umgebungen, automatische oder feste Tageszeit, automatisc
 
 Zusätzlich prüfen die Geräteprofile nun den Welt-Dialog und bei 360/390 Pixeln alle vier Welten mit Nacht/Schnee: je 11 Profile in Chromium und WebKit bestanden. Die Touch-Suite enthält den Weltwechsel per Fingertipp und den gespeicherten Ort nach Neustart: je 7 Abläufe bestanden. Wetter bleibt in der Kuschelstube auf den Fensterbereich begrenzt; dekorative Partikel und Belohnungssterne nehmen keine Berührungen entgegen. Physische iPhones und Samsung-Geräte stehen hier weiterhin nicht zur Verfügung.
 
+Version 1.2.1 ergänzt einen 25. Browserablauf in beiden Engines: Wandartikel werden auch dann in einer Stube vorgeführt, wenn als Umgebung der Garten gewählt ist. Ein Hinweis erklärt dies. Die Vorschau verändert den gespeicherten Aufenthaltsort nicht. Gekaufte Wände wirken auf die Wandgestaltung der Kuschelstube; der gewählte Teppich wirkt dort auf den großen Teppich und draußen auf die Picknickfläche.
+
 ## Touch-Korrektur 1.1.1
 
 Der gemeldete Gerätefehler ist ohne Angabe des konkreten Buttons/Geräts nicht eindeutig reproduzierbar. Bei der Prüfung wurde jedoch ein unabhängiges Problem gefunden: Der Toast hatte eine aktive Trefferfläche vor darunterliegenden Buttons. `pointer-events: none` entfernt diese Blockade. Dekorative Button-SVGs nehmen keine eigenen Treffer mehr entgegen; reine Hover-Bewegungen entfallen auf Touch-Geräten.
