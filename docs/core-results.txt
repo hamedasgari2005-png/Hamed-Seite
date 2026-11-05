@@ -1,0 +1,41 @@
+
+> mooslicht-web@1.0.0 test
+> node --test tests/core.test.mjs
+
+✔ rosa Bär, vier Arten, sechs kostenlose rosa Möbel und drei Startaufgaben (4.209474ms)
+✔ Onboarding ist idempotent (0.255971ms)
+✔ ungültige Namen werden abgelehnt (0.210132ms)
+✔ Abhaken, rückgängig, erneut: genau eine Belohnung (0.270783ms)
+✔ Vergangenheit gibt keine Spielbelohnung (0.161871ms)
+✔ Energieobergrenze und echte Buchungsbeträge (0.179157ms)
+✔ Sommerzeit: lokale Kalenderaddition und eindeutige Fälligkeiten (0.121361ms)
+✔ rückwärts laufende Uhr dupliziert keine Tage (0.133609ms)
+✔ einmalig, wöchentlich, ausgewählte Tage und Pause (3.579836ms)
+✔ Bearbeitung hält historische Titel fest (0.258675ms)
+✔ Löschen erhält Erfolge und beendet neue Fälligkeiten (0.160769ms)
+✔ leere Wochenauswahl und falsche Uhrzeit abweisen (0.214569ms)
+✔ Kaufen, ausrüsten und erneuter Kauf (0.256291ms)
+✔ fehlendes Guthaben, Level und Besitz sperren korrekt (0.189392ms)
+✔ Entwicklungsstufen (0.130845ms)
+✔ Reise braucht Energie, erlaubt nur eine und lässt Geschichte bestehen (0.683637ms)
+✔ Reiseabschluss nicht vor Endzeit und Belohnung genau einmal (0.306516ms)
+✔ Folgereise dauert20 Minuten und bevorzugt neue Geschichte (0.208461ms)
+✔ Stimmung ändern ohne Belohnung zu verdoppeln (0.229792ms)
+✔ Journal bearbeiten, neuer Eintrag, löschen: Tageslimit (0.250823ms)
+✔ Fokus pausiert, setzt fort und beendet einmalig (0.197284ms)
+✔ abrupt unterbrochene Atmung beginnt pausiert statt unsichtbar zu verdienen (0.128722ms)
+✔ Sicherung enthält den vollständigen Spielstand (0.608996ms)
+✔ unbekannte, beschädigte, ungültige und doppelte Sicherungen werden abgewiesen (0.308709ms)
+✔ Import verhindert HTML-Injektion durch manipulierte IDs (0.108061ms)
+✔ alle Tier-/Farbweltkombinationen erhalten Fortschritt (1.291732ms)
+✔ Wochenziele beginnen Montag (0.191555ms)
+✔ Kalender weist unmögliche Daten ab (0.094741ms)
+✔ Katalog:36 eindeutige Artikel,24 vollständige Geschichten,30 Impulse (0.086658ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59.268118

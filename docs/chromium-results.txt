@@ -1,0 +1,16 @@
+PASS Onboarding, drei Aufgaben, einmalige Vergütung, Neustart
+PASS Vier Tierarten und alle Farbwelten speichern ohne Fortschrittsverlust
+PASS Aufgabe anlegen, bearbeiten, pausieren, löschen
+PASS Kaufen, ausrüsten, Vorschau und Inventar bleiben nach Neustart
+PASS Reise läuft nach Zeitfortschritt weiter und belohnt nur einmal
+PASS Stimmung und Tagebuch anlegen, ändern und löschen; kein HTML ausgeführt
+PASS Fokus pausieren, fortsetzen und nach Ablauf abschließen
+PASS Aufgabenideen, Wochenziel und Kalenderexport sind tatsächlich benutzbar
+PASS Tagebuchsuche filtert eigene Einträge; Entspannungsübung vergütet einmal
+PASS Vollständiger Export, Reset, Wiederherstellung und beschädigter Import
+PASS Offline-Neustart funktioniert einschließlich Aufgaben und Gestaltung
+PASS Zwei offene Fenster buchen Belohnungen konfliktfrei
+PASS Speicherfehler verändert weder sichtbaren Stand noch Datenbank
+PASS Beschädigter Speicher wird nicht still zurückgesetzt
+PASS Kein horizontales Überlaufen auf kleinem iPhone und Desktop; alle Bereiche
+15/15 Browsertests bestanden
