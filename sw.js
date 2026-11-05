@@ -1,5 +1,5 @@
-const CACHE='mooslicht-web-1.1.1-'+new URL(self.registration.scope).pathname;
-const FILES=['./','./index.html','./style.css','./app.js','./interaction.js','./core.js','./data.js','./storage.js','./art.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png','./icons/apple-touch-icon.png'];
+const CACHE='mooslicht-web-1.2.0-'+new URL(self.registration.scope).pathname;
+const FILES=['./','./index.html','./style.css','./app.js','./interaction.js','./scenery.js','./core.js','./data.js','./storage.js','./art.js','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png','./icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES.map(p=>new URL(p,self.registration.scope).href)))));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('mooslicht-web-')&&key.endsWith(new URL(self.registration.scope).pathname)&&key!==CACHE)await caches.delete(key);await self.clients.claim()})()));
 self.addEventListener('message',event=>{if(event.data==='ACTIVATE_UPDATE')self.skipWaiting()});

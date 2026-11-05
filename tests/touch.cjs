@@ -8,6 +8,7 @@ const tap=async(page,name)=>page.getByRole('button',{name,exact:true}).tap();
 const state=page=>page.evaluate(async()=> (await import('./storage.js')).load());
 const start=async page=>{await page.goto(base);await tap(page,'Unser Zuhause öffnen');await page.getByRole('heading',{name:'Dein Tag',exact:true}).waitFor()};
 const close=page=>tap(page,'Schließen');
+test('Umgebung per Fingertipp wechseln und nach Neustart behalten',async({page})=>{await start(page);await tap(page,'Umgebung wechseln');await tap(page,'Seerosenufer');await page.getByRole('combobox',{name:'Licht & Tageszeit'}).selectOption('sunset');await tap(page,'Diese Welt speichern');await page.locator('#modal').waitFor({state:'hidden'});await page.reload();await page.locator('.pet-card .world-scene[data-world=lake][data-phase=sunset]').waitFor();assert.equal((await state(page)).profile.world,'lake')});
 test('Touch-Navigation, Haustier und alle fünf Interaktionen',async({page})=>{
  await start(page);for(const name of ['Reisen','Für mich','Atelier','Rückblick','Einstellungen','Zuhause']){await tap(page,name);assert.ok(await page.locator('main').count())}
  await tap(page,'Mit Momo spielen');for(const [label,action]of [['Streicheln','happy'],['Ein Beerenhäppchen','eat'],['Zusammen spielen','play'],['Schlummern','sleep'],['Eine Runde laufen','walk']]){await tap(page,label);await page.locator('#modal .pet.action-'+action).waitFor()};await close(page);

@@ -1,4 +1,6 @@
 import {items, stories, destinations} from './data.js';
+import {worlds,daylights,weathers} from './scenery.js';
+const validWorld=p=>[['world',worlds],['daylight',daylights],['weather',weathers]].every(([key,values])=>p[key]===undefined||Object.hasOwn(values,p[key]));
 export const kinds={bear:'Bär',fox:'Fuchs',rabbit:'Hase',spirit:'Waldgeist'};
 export const themes={rose:'Rosenzauber',moss:'Mooslicht',lavender:'Lavendeltraum',sky:'Wolkenblau'};
 export const colors={pink:'Rosa',honey:'Honig',cream:'Vanille',mint:'Minze',lavender:'Flieder',cocoa:'Kakao'};
@@ -38,7 +40,7 @@ export function act(s,a,now=Date.now()) {
  case 'profile': {
   const p={...s.profile,...a.profile};need(text(p.petName,30),'Bitte gib einen Namen mit 1–30 Zeichen ein.');need(typeof p.userName==='string'&&p.userName.length<=40,'Dein Name darf höchstens 40 Zeichen haben.');
   need(enumIs(kinds,p.kind)&&enumIs(colors,p.color)&&enumIs(themes,p.theme)&&['plain','heart','freckles'].includes(p.pattern)&&['system','light','dark'].includes(p.appearance),'Diese Gestaltung ist ungültig.');
-  s.profile={...p,onboarded:s.profile.onboarded};message='Dein Zuhause hat einen neuen Look.';break;
+  need(validWorld(p),'Bitte wähle eine gültige Umgebung, Tageszeit und Atmosphäre.');s.profile={...p,onboarded:s.profile.onboarded};message='Dein Zuhause hat einen neuen Look.';break;
  }
  case 'onboard': {
   if(s.profile.onboarded)break;act(s,{type:'profile',profile:a.profile},now);s.profile.onboarded=true;s.createdAt=now;
@@ -102,6 +104,7 @@ export function act(s,a,now=Date.now()) {
  return {state:s,message};
 }
 export function validate(s) {
+ need(!s?.profile||validWorld(s.profile),'Ungültige Umgebung in der Sicherung.');
  need(s&&s.version===1&&s.profile,'Diese Sicherung ist keine unterstützte Mooslicht-Web-Sicherung.');
  need(integer(s.revision,0,Number.MAX_SAFE_INTEGER)&&Number.isFinite(s.createdAt)&&s.createdAt>0,'Ungültiger Speicherstand.');
  const p=s.profile;need(typeof p.onboarded==='boolean'&&typeof p.userName==='string'&&p.userName.length<=40&&text(p.petName,30)&&enumIs(kinds,p.kind)&&enumIs(colors,p.color)&&enumIs(themes,p.theme)&&['plain','heart','freckles'].includes(p.pattern)&&['system','light','dark'].includes(p.appearance),'Ungültiges Haustierprofil.');

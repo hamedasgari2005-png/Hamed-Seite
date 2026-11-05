@@ -2,6 +2,14 @@
 
 Stand: 05.11.2026. Tatsächlich auf dem Entwicklungsrechner ausgeführt:
 
+## Spielwelten 1.2
+
+Neu: vier auswählbare Umgebungen, automatische oder feste Tageszeit, automatische oder feste Atmosphäre und eigene Reiseillustrationen. Neue Profilfelder sind optional, damit ältere Sicherungen unverändert lesbar bleiben. Neue Werte werden bei Aktionen und Import validiert. Die Vorschau ändert den gespeicherten Stand erst beim Speichern; Abbrechen stellt die gespeicherte Umgebung wieder dar.
+
+31 Logiktests bestanden, darunter Altstand-Kompatibilität, Speicherung aller Welten, Zurückweisen ungültiger Weltoptionen und Tageszeitgrenzen. Je 24 Browserabläufe in Chromium und WebKit bestanden; neue Prüfungen decken Vorschau aller vier Orte, Speicherung von Nacht/Schnee, Neustart, Abbrechen ohne Fortschrittsverlust sowie Animationen und reduzierte Bewegung ab. Der 24. Ablauf prüft den automatischen Lichtwechsel in einer offen bleibenden App beim Überschreiten von 17 Uhr. Vier tatsächliche Szenen-Screenshots wurden visuell kontrolliert. Die SVG-Hintergründe passen ihre Breite der Szene an, während Haustiere mit ihrem ursprünglichen Seitenverhältnis separat gezeichnet werden.
+
+Zusätzlich prüfen die Geräteprofile nun den Welt-Dialog und bei 360/390 Pixeln alle vier Welten mit Nacht/Schnee: je 11 Profile in Chromium und WebKit bestanden. Die Touch-Suite enthält den Weltwechsel per Fingertipp und den gespeicherten Ort nach Neustart: je 7 Abläufe bestanden. Wetter bleibt in der Kuschelstube auf den Fensterbereich begrenzt; dekorative Partikel und Belohnungssterne nehmen keine Berührungen entgegen. Physische iPhones und Samsung-Geräte stehen hier weiterhin nicht zur Verfügung.
+
 ## Touch-Korrektur 1.1.1
 
 Der gemeldete Gerätefehler ist ohne Angabe des konkreten Buttons/Geräts nicht eindeutig reproduzierbar. Bei der Prüfung wurde jedoch ein unabhängiges Problem gefunden: Der Toast hatte eine aktive Trefferfläche vor darunterliegenden Buttons. `pointer-events: none` entfernt diese Blockade. Dekorative Button-SVGs nehmen keine eigenen Treffer mehr entgegen; reine Hover-Bewegungen entfallen auf Touch-Geräten.

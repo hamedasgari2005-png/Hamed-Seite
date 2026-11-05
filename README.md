@@ -14,6 +14,8 @@ Der Browser entscheidet über die Speicherdauer. Vor dem Löschen von Browserdat
 
 ## Funktionsumfang
 
+Version 1.2 ergänzt vier kostenlose, eigenständig illustrierte Umgebungen: Blütengarten, Kuschelstube, Seerosenufer und Zauberwald. Unter **Zuhause → Umgebung wechseln** lassen sich Ort, Tageszeit und Atmosphäre mit einer Vorschau wählen und dauerhaft speichern. Automatisches Licht folgt der lokalen Uhr, die automatische Atmosphäre wechselt täglich. Es gibt außerdem wählbare Blüten, Regen und Schnee, animierte Wolken, Pflanzen, Wasser, Laternen und Glühwürmchen. In der Kuschelstube bleibt das Wetter vor dem Fenster. Auch alle drei Reiseziele haben eigene Illustrationen, einschließlich des Wolkenhains. Gekaufte Gegenstände bleiben nutzbar. Reduzierte Bewegung wird respektiert, die Figuren und Illustrationen sind eigene SVG-Vektorgrafiken.
+
 Version 1.1.1 ergänzt Touch-Tests, entfernt die Trefferfläche von Erfolgsmeldungen über Buttons und unterbindet auf Nutzerwunsch Seitenzoom. Eingabefelder verwenden mindestens 16 Pixel Schrift. Normales Wischen und Texteingabe bleiben möglich. Reisebuttons erklären fehlende Energie oder benötigte Level. Auf dem Home-Bildschirm installiert startet die App im eigenständigen Fenster; Browser- und Betriebssystemfunktionen außerhalb der App werden dadurch nicht verändert.
 
 Version 1.1 verbessert die Darstellung auf iPhone- und Samsung-Displaygrößen, Querformat und bei großer Schrift. Aufgaben folgen auf Handys direkt auf das Haustier. Neu sind Kategorie-Symbole und die Schnellauswahl im Atelier. Browser-Zurück/Vorwärts, Schutz vor doppeltem Absenden und die Anzeige bereits wartender Updates sind korrigiert.

@@ -40,7 +40,7 @@ async function layout(page,label){
     if(['galaxy','iphone','landscape'].includes(name))await page.screenshot({path:path.join(output,engine+'-'+name+'-'+tab+'.png'),fullPage:true});
    }
    await page.getByRole('button',{name:'Zuhause',exact:true}).click();
-   for(const [opener,expected]of [['Einen kleinen Schritt hinzufügen','Was möchtest du tun?'],['Gestalten','Name deines Begleiters'],['So geht’s',null]]){
+   for(const [opener,expected]of [['Einen kleinen Schritt hinzufügen','Was möchtest du tun?'],['Gestalten','Name deines Begleiters'],['Umgebung wechseln',null],['So geht’s',null]]){
     await page.getByRole('button',{name:opener,exact:true}).click();await layout(page,name+' dialog '+opener);
     if(expected){const field=page.getByRole('textbox',{name:expected,exact:false});await field.focus();await field.fill('Ein neuer Name');}
     await page.getByRole('button',{name:'Schließen',exact:true}).click();
@@ -49,6 +49,7 @@ async function layout(page,label){
    await page.getByRole('button',{name:/Ruhig atmen/}).click();await layout(page,name+' breathing');await page.getByRole('button',{name:'Schließen',exact:true}).click();
    await page.getByRole('button',{name:'Atelier',exact:true}).click();await page.getByRole('button',{name:'Deko',exact:true}).click();assert.equal(await page.locator('.item-card').count(),4);await layout(page,name+' filtered shop');
    if(name==='iphone'||name==='galaxy'){
+    for(const world of ['garden','cottage','lake','glade']){await page.evaluate(async world=>{const {transact}=await import('./storage.js');await transact({type:'profile',profile:{world,daylight:'night',weather:'snow'}})},world);await page.reload();await page.getByRole('button',{name:'Zuhause',exact:true}).click();await layout(page,name+' world '+world);}
     for(const theme of ['rose','moss','lavender','sky'])for(const appearance of ['light','dark']){
      await page.evaluate(async profile=>{const {transact}=await import('./storage.js');await transact({type:'profile',profile})},{theme,appearance});await page.reload();await layout(page,name+' '+theme+' '+appearance);
     }
