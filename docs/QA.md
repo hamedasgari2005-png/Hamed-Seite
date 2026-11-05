@@ -2,6 +2,18 @@
 
 Stand: 05.11.2026. Tatsächlich auf dem Entwicklungsrechner ausgeführt:
 
+## Touch-Korrektur 1.1.1
+
+Der gemeldete Gerätefehler ist ohne Angabe des konkreten Buttons/Geräts nicht eindeutig reproduzierbar. Bei der Prüfung wurde jedoch ein unabhängiges Problem gefunden: Der Toast hatte eine aktive Trefferfläche vor darunterliegenden Buttons. `pointer-events: none` entfernt diese Blockade. Dekorative Button-SVGs nehmen keine eigenen Treffer mehr entgegen; reine Hover-Bewegungen entfallen auf Touch-Geräten.
+
+Auf ausdrücklichen Nutzerwunsch begrenzen Viewport und `touch-action` den Seitenzoom; Safari-Gesten und Mehrfinger-Touch-Gesten werden abgefangen. Ein-Finger-Scrollen sowie Texteingabe bleiben erhalten. Eingabefelder haben mindestens 16 CSS-Pixel Schriftgröße gegen iOS-Fokuszoom. Betriebssystemweite Bedienungshilfen liegen außerhalb der Web-App.
+
+`npm run test:touch`: **6 von 6 Abläufen in Chromium und 6 von 6 in WebKit bestanden**. Die Tests verwenden Playwrights Touchscreen und `tap()` für Navigation, alle fünf Tierinteraktionen, Gestaltung, Aufgaben anlegen/bearbeiten/abhaken, Kauf/Ausrüstung, Reisestart, Stimmung, Tagebuch und Fokus-/Atemübungen. Datenbankwerte und tatsächliche UI-Zustände werden geprüft. Ein Hit-Test kontrolliert, dass Meldungen keine Buttons blockieren.
+
+Die Zoomprüfung kontrolliert den Viewportmaßstab nach Doppeltipp, Fokus und Gesten. In Chromium werden zusätzlich echte Browser-Touch-Ereignisse mit zwei auseinanderbewegten Punkten eingespeist und deren Empfang/Abfangen geprüft; ein separater Ein-Finger-Wisch muss den Scrollstand verändern. Die höherstufige CDP-Funktion `synthesizeScrollGesture` lieferte in diesem Headless-Runner Erfolg ohne Scrollbewegung, weshalb der Test ausdrücklich einzelne `dispatchTouchEvent`-Punkte verwendet. WebKit prüft Fingertipps, Maßstab und die abbrechbaren Gestenereignisse; es wird kein nativer iPhone-Pinch-Test behauptet.
+
+Protokolle: `touch-chromium-1.1.1.txt`, `touch-webkit-1.1.1.txt`. Für diese Version erneut bestanden: 29 Logiktests sowie je 20 Browserabläufe und 11 Geräte-/Schriftprofile in Chromium und WebKit. Das Offline-Paket enthält jetzt auch `interaction.js` (14 Ressourcen). Reisebuttons zeigen ihre Sperrbedingung unmittelbar an. Eine neue Version ersetzt weder Spielstand noch Sicherungen.
+
 | Prüfung | Ergebnis |
 |---|---|
 | Node.js-Domänenlogik, Zeitzone Europe/Berlin | 29 Tests bestanden, 0 Fehler |

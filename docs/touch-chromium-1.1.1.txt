@@ -1,0 +1,11 @@
+
+> mooslicht-web@1.1.1 test:touch
+> node tests/touch.cjs
+
+PASS chromium Touch-Navigation, Haustier und alle fünf Interaktionen
+PASS chromium Aufgaben per Touch anlegen, speichern, abhaken und bearbeiten
+PASS chromium Meldungen blockieren keine darunterliegenden Schaltflächen
+PASS chromium Shop, Kauf, Ausrüstung und Reisen reagieren auf Touch
+PASS chromium Stimmung, Tagebuch, Fokus und Atemübung per Touch
+PASS chromium Kein Seitenzoom, Eingaben mindestens 16px und normales Scrollen erlaubt
+6/6 Touch-Abläufe bestanden

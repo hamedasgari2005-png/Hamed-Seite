@@ -1,0 +1,11 @@
+
+> mooslicht-web@1.1.1 test:touch
+> node tests/touch.cjs
+
+PASS webkit Touch-Navigation, Haustier und alle fünf Interaktionen
+PASS webkit Aufgaben per Touch anlegen, speichern, abhaken und bearbeiten
+PASS webkit Meldungen blockieren keine darunterliegenden Schaltflächen
+PASS webkit Shop, Kauf, Ausrüstung und Reisen reagieren auf Touch
+PASS webkit Stimmung, Tagebuch, Fokus und Atemübung per Touch
+PASS webkit Kein Seitenzoom, Eingaben mindestens 16px und normales Scrollen erlaubt
+6/6 Touch-Abläufe bestanden

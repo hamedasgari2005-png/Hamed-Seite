@@ -23,6 +23,7 @@ jobs:
           done
           npm run test:browser
           npm run test:mobile
+          npm run test:touch
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

@@ -14,6 +14,8 @@ Der Browser entscheidet über die Speicherdauer. Vor dem Löschen von Browserdat
 
 ## Funktionsumfang
 
+Version 1.1.1 ergänzt Touch-Tests, entfernt die Trefferfläche von Erfolgsmeldungen über Buttons und unterbindet auf Nutzerwunsch Seitenzoom. Eingabefelder verwenden mindestens 16 Pixel Schrift. Normales Wischen und Texteingabe bleiben möglich. Reisebuttons erklären fehlende Energie oder benötigte Level. Auf dem Home-Bildschirm installiert startet die App im eigenständigen Fenster; Browser- und Betriebssystemfunktionen außerhalb der App werden dadurch nicht verändert.
+
 Version 1.1 verbessert die Darstellung auf iPhone- und Samsung-Displaygrößen, Querformat und bei großer Schrift. Aufgaben folgen auf Handys direkt auf das Haustier. Neu sind Kategorie-Symbole und die Schnellauswahl im Atelier. Browser-Zurück/Vorwärts, Schutz vor doppeltem Absenden und die Anzeige bereits wartender Updates sind korrigiert.
 
 Samsung Internet: Menü (≡) → „Seite hinzufügen zu“ → „Startbildschirm“, je nach Version „App installieren“. Chrome auf Android: Menü (⋮) → „Zum Startbildschirm hinzufügen“ → „Installieren“. Bestehende Installation für Updates online öffnen und im Hinweis „Jetzt laden“ wählen. Ein Löschen oder Neuinstallieren ist dafür nicht erforderlich.
@@ -46,6 +48,7 @@ python3 -m http.server 8080
 npx playwright install chromium
 npm run test:browser
 npm run test:mobile
+npm run test:touch
 ```
 
 Die Laufzeit benötigt keine npm-Pakete. Playwright ist ausschließlich eine Entwicklungsabhängigkeit. `MOOSLICHT_URL` wählt eine andere Testadresse; `MOOSLICHT_BROWSER=webkit` wählt die Safari-verwandte Engine, sofern lokal verfügbar. Screenshots liegen in `test-results/`. Browser-Fixtures enthalten nur Testdaten und verändern keine echten Nutzerkonten.
